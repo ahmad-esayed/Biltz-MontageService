@@ -1,0 +1,712 @@
+/* Start Variables */
+:root {
+    --main-color: #7958ff;
+    --secondary-color: #eeede7;
+    --third-color: #b9b7bd;
+    --forth-color: darkviolet
+        /* #868b8e */
+    ;
+
+    --section-padding: 60px;
+    --section-background: #f6f6f6;
+
+    --heading-color: ;
+    --pragrgh-color: ;
+
+    --line-h: 1.4;
+
+    --main-duration: 0.5s;
+
+    --my-colors: #145da0 #0c2d48 #2e8bc0 #b1d4e0;
+    --my2-colors: #45ffca #feffac #ffb6d9 #d67bff;
+    --my3-colors: #67595e #a49393 #eed6d3 #e8b4b8;
+}
+
+
+/************************** Colors ************************/
+/* group-1: 
+
+*/
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+
+}
+
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+
+.special-text {
+    display: inline-block;
+    position: relative;
+}
+
+.special-text h2 {
+    font-size: 30px;
+}
+
+
+.special-text::before {
+    content: "";
+    background-color: black;
+    display: block;
+    width: 80%;
+    height: 2px;
+    position: absolute;
+    bottom: 10px;
+    left: 10%;
+}
+
+.special-text::after {
+    content: "";
+    background-color: var(--section-background);
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+
+
+/* ******************** Start heading ******************* */
+header {
+    background-color: var(--secondary-color);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .container div {
+    position: relative;
+}
+
+header .container img {
+    width: 50px;
+    height: 50px;
+}
+
+header .container h1 {
+    font-size: 35px;
+    margin: 10px 0;
+}
+
+/* ******************************* */
+@media (max-width: 767px) {
+    header .container h1 {
+        font-size: 30px;
+    }
+}
+
+header .container div .links {
+    display: none;
+    list-style: none;
+    background-color: var(--third-color);
+    padding: 15px;
+    position: absolute;
+    left: 0;
+    z-index: 10;
+    transform: translateX(-80%);
+    min-width: 170px;
+}
+
+header .container div .links::before {
+    content: "";
+    display: block;
+    width: 0px;
+    border: 8px solid;
+    border-color: transparent transparent gray transparent;
+    position: absolute;
+    top: -9%;
+    right: 10%;
+}
+
+
+header .container div .links li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    transition: 0.5s;
+}
+
+header .container div .links li:hover {
+    padding-left: 20px;
+    background-color: var(--main-color);
+}
+
+
+header .container div .links li a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+/* ******************** End heading ******************* */
+
+/* ******************** Start landing ******************* */
+
+.landing {
+    background-color: blueviolet;
+    background-image: url(../images/landing.jpg);
+    background-size: cover;
+    height: calc(100vh + 60px);
+    position: relative;
+    overflow: hidden;
+}
+
+.landing::after {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.658);
+    display: block;
+    width: 100%;
+    height: 200%;
+    position: absolute;
+    z-index: 1;
+    top: -200px;
+    left: -50%;
+    transform: rotate(15deg);
+    /* box-shadow: ; */
+
+}
+
+
+
+.landing .intro-text {
+    /* background-color: rgba(0, 255, 255, 0.5); */
+    width: 40%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 5;
+    color: white;
+    padding: 15px;
+
+}
+
+@media (max-width: 767px) {
+
+    .landing {
+        background-image: url(../images/landing2.jpg);
+        height: 100vh;
+    }
+
+    .landing::after {
+        content: "";
+        background-color: rgba(0, 0, 0, 0.658);
+        display: block;
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%) rotate(0deg);
+        /* box-shadow: ; */
+
+    }
+
+    .landing .intro-text {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+.landing .intro-text h2 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.landing .intro-text h2+p {
+    font-size: 20px;
+}
+
+
+/* ******************** End landing ******************* */
+
+/* ******************** Start Featurs ******************* */
+
+.featuers {
+    background-color: var(--secondary-color);
+    padding: 100px 0;
+}
+
+.featuers .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+
+}
+
+.featuers .container .feat {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.featuers .container .feat i {
+    color: #ebeb0f;
+}
+
+
+.featuers .container .feat .text {
+    padding: 10px;
+}
+
+
+.featuers .container .feat .text h3 {
+    margin-bottom: 10px;
+}
+
+
+.featuers .container .feat .text p {
+    margin: 0;
+    padding: 0 10px;
+}
+
+
+/* ******************** End Featurs ******************* */
+
+/* ******************** Start Montage ******************* */
+
+.montage {
+    background-color: #777;
+    padding: var(--section-padding) 0;
+    text-align: center;
+}
+
+.montage .container {
+    padding-top: 40px;
+}
+
+/* the rest css styling from gallery section  */
+
+
+
+/* ******************** End Montage ******************* */
+
+/* ******************** Start services ******************* */
+
+.services {
+    background-color: var(--third-color, #eee);
+    padding: var(--section-padding) 0;
+    text-align: center;
+}
+
+
+.services .container {
+    padding-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.services .container .serv {
+    background-color: white;
+    padding: 10px;
+}
+
+.services .container .serv img {
+    width: 100%;
+    height: 300px;
+}
+
+.services .container .serv h3 {
+    margin: 10px 0;
+}
+
+.services .container {}
+
+.services .container {}
+
+/* ******************** End services ******************* */
+/* ******************** Start gallery ******************* */
+
+.gallery {
+    background-color: var(--secondary-color);
+    padding: var(--section-padding) 0;
+    text-align: center;
+}
+
+.gallery .container {
+    padding-top: 40px;
+}
+
+.gallery .container .cards,
+.gallery .container .aircond,
+.montage .container .pics,
+.gallery .container .pics {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.gallery .container .cards a,
+.gallery .container .aircond a,
+.montage .container .pics a,
+.gallery .container .pics a {
+    display: inline;
+    flex-basis: 32%;
+    width: 300px;
+
+}
+
+.gallery .container .cards a img,
+.gallery .container .aircond a img,
+.montage .container .pics a img,
+.gallery .container .pics img {
+    width: 100%;
+    height: 100%;
+}
+
+
+@media (max-width: 767px) {
+
+    .gallery .container .cards a,
+    .gallery .container .aircond a,
+    .montage .container .pics a,
+    .gallery .container .pics a {
+        width: 150px;
+    }
+
+}
+
+
+.gallery .container h3.air {
+    margin-top: 100px;
+}
+
+.gallery .container .card-text,
+.montage .container .card-text,
+.elc-panel .container .card-text {
+    padding: 10px;
+    text-align: left;
+    background-color: white;
+    border-radius: 6px;
+}
+
+
+/* ******************** End gallery ******************* */
+
+/* ********************* Start Electrical Panel And Tools ******************* */
+
+.elc-panel {
+    background-color: var(--secondary-color, #eee);
+    padding: var(--section-padding) 0;
+    text-align: center;
+}
+
+.elc-panel .container {
+    padding-top: 40px;
+}
+
+.elc-panel .container .panel,
+.elc-panel .container .tools {
+    position: relative;
+}
+
+.elc-panel .container .panel .pan-imgs,
+.elc-panel .container .tools .tools-imgs {
+    margin: 50px auto 30px;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    max-width: 1000px;
+    max-height: 500px;
+}
+
+
+.elc-panel .container i.right {
+    color: #555;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    right: -5%;
+}
+
+.elc-panel .container i.left {
+    color: #555;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: -5%;
+}
+
+.elc-panel .container i.right:hover,
+.elc-panel .container i.left:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+
+    .elc-panel .container i.right,
+    .elc-panel .container i.left {
+        display: none;
+    }
+
+
+}
+
+
+
+
+
+.elc-panel .container .panel a {
+    padding: 10px;
+    background-color: white;
+    min-width: 500px;
+    height: 500px;
+}
+
+@media (max-width: 767px) {
+
+    .elc-panel .container .panel a {
+        min-width: 250px;
+        height: 250px;
+    }
+
+}
+
+.elc-panel .container .panel a img,
+.elc-panel .container .tools a img {
+    width: 100%;
+    height: 100%;
+}
+
+.elc-panel .container .panel .pan-imgs {
+    width: 100%;
+    height: 100%;
+}
+
+
+/****************** Tools **********************/
+
+
+.elc-panel .container .tools a {
+    padding: 10px;
+    background-color: white;
+    min-width: 330px;
+    height: 330px;
+}
+
+@media (max-width: 767px) {
+
+    .elc-panel .container .tools a {
+        min-width: 200px;
+        height: 200px;
+    }
+
+}
+
+.elc-panel .container .tools-text {
+    text-align: center;
+}
+
+
+/* ********************* End Electrical Panel And Tools ******************* */
+
+/* ******************** Start About ******************* */
+
+.about {
+    background-color: var(--third-color, #eee);
+    padding: var(--section-padding) 0;
+    text-align: center;
+}
+
+.about .container {
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.about .container .about-img {
+    display: flex;
+    flex-basis: 60%;
+    position: relative;
+    vertical-align: middle;
+    padding: 5px;
+    background-color: var(--main-color);
+    border-radius: 10px;
+}
+
+@media (max-width: 767px) {
+    .about .container {
+        flex-direction: column;
+    }
+
+    .about .container .about-img {
+        border: none;
+    }
+
+}
+
+.about .container .about-img img {
+    max-width: 50%;
+    border-radius: 10px;
+}
+
+.about .container .about-text {
+    padding: 10px;
+    flex-basis: 30%;
+}
+
+.about .container {}
+
+
+/* ******************** End About ******************* */
+
+/* ******************** Start Contact ******************* */
+
+.contact {
+    background-color: #333;
+    padding: var(--section-padding) 0;
+    text-align: center;
+    color: white;
+}
+
+.contact .container {
+    padding-top: 30px;
+}
+
+.contact .container .info {
+    text-align: left;
+    margin-left: 25%;
+}
+
+.contact .container .info .cont {
+    margin: 10px 0;
+    font-size: 18px;
+    padding: 3px 0;
+}
+
+
+.contact .container .info div {}
+
+.contact .container .info a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.contact .container .info p {
+    display: inline;
+}
+
+.contact .container .info i {
+    background-color: white;
+    border-radius: 5px;
+    padding: 2px 3px;
+    margin-right: 5px;
+    font-size: 20px;
+}
+
+.contact .container .info i.email {
+    color: orange;
+}
+
+.contact .container .info i.whats {
+    color: #42db5d;
+}
+
+.contact .container .info i.phone {
+    color: blue;
+}
+
+.contact .container .info i.face {
+    color: blue;
+}
+
+.contact .container .info i.tele {
+    color: #2ca5e0;
+}
+
+.contact .container .info i.loca {
+    color: #fe141d;
+}
+
+.contact .container .info p span {
+    margin-left: 30px;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+@media (max-width: 767px) {
+    .contact .container .info a {
+        font-size: 12px;
+    }
+
+}
+
+/* ******************** End Contact ******************* */
+
+/* ******************** Start Footer ******************* */
+
+.footer {
+    height: 50px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding-top: 5px;
+}
+
+.footer p span {
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+/* ******************** End Footer ******************* */
